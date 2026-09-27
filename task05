@@ -1,0 +1,40 @@
+#include<stdio.h>
+int main(){
+    float loadamount, bonus, finalbalance;
+    int code, weekendstatus;
+    printf("enter the mobile load amount");
+    scanf("%f",&loadamount);
+    printf("enter the networl code: (1==jazz, 2==telenor, 3==ufone)");
+    scanf("%d",&code);
+    printf("enter the weekend status:(1==weekend, 0==weekday)");
+    scanf("%d",&weekendstatus);
+    if (loadamount <100){
+        bonus = 0;}
+        else if  (loadamount >100 && loadamount <=499 && weekendstatus==1){
+            if (code==1){
+                if(code=2){.c
+                    bonus =loadamount*0.10;
+                }
+                    else{
+                        bonus =loadamount*0.05;
+                    }
+
+            }
+        }
+        else if(loadamount >100 && loadamount<=499 && weekendstatus==0){
+            bonus =loadamount*0.05;
+        }
+        else if(loadamount >=500 && code==1 || weekendstatus==1){
+            bonus =loadamount*0.20;
+        }
+            else 
+            {
+                bonus =loadamount*0.12;
+            }
+            finalbalance =loadamount+bonus;
+            printf("the bonus is %.2f",bonus);
+            printf("the finalbalance is %.2f",finalbalance);
+        }
+                
+            
+        
