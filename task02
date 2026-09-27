@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main() {
+    float totalbill, discount = 0, finalAmount;
+    int member;
+
+    printf("Enter total bill: ");
+    scanf("%f", &totalbill);
+
+    printf("Enter membership status (1 for member, 0 for non-member): ");
+    scanf("%d", &member);
+
+    if (totalbill < 500.00) {
+        discount = 0;
+    }
+    else if (totalbill >= 500.00 && totalbill <= 1999.00) {
+        if (member == 1) {
+            discount = totalbill * 0.10;
+        }
+        else {
+            discount = totalbill * 0.05;
+        }
+    }
+    else {   
+        if (member == 1) {
+            discount = totalbill * 0.15;
+        }
+        else {
+            discount = totalbill * 0.08;
+        }
+    }
+
+    finalAmount = totalbill - discount;
+
+    printf("Discount Amount: Rs %.2f\n", discount);
+    printf("Final Payable Amount: Rs %.2f\n", finalAmount);
+}
+    
+
+
+
+      
