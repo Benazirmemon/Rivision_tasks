@@ -1,0 +1,20 @@
+include<stdio.h>
+int main(){
+    float distance, fare;
+    int hour;
+    printf("enter the distance");
+    scanf("%f",&distance);
+    printf("enter the hour");
+    scanf("%d",&hour);
+    fare = 50.0;
+    if (hour < 6 || hour > 22)
+    {
+        fare = fare+40;
+    }
+    if (distance <=0)
+    {
+        printf("invalid distance");
+    }
+    fare = fare+(distance-1)*22;
+    printf("the total fare is RS %.2f", fare);
+}
