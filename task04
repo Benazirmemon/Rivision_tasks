@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main()
+{
+    int capacity, currentlevel, wholeminutes;
+    float fillrate, remainingliters, requiredtime, electricitycost;
+    printf("Enter tank capacity (liters): ");
+    scanf("%d", &capacity);
+
+    printf("Enter current water level (liters): ");
+    scanf("%d", &currentlevel);
+
+    printf("Enter motor fill rate (liters per minute): ");
+    scanf("%f", &fillrate);
+
+    if (currentlevel >= capacity)
+    {
+        printf("Tank Already Full");
+    }
+    else
+    {
+        remainingliters = capacity - currentlevel;
+
+        requiredtime = remainingliters / fillrate;
+
+        wholeminutes = (int)requiredtime;
+
+        if (requiredtime > wholeminutes)
+        {
+            wholeminutes++;
+        }
+
+        electricitycost = wholeminutes * 3.50;
+
+        printf("Remaining Liters: %.2f\n", remainingliters);
+        printf("Required Time: %.2f minutes\n", requiredtime);
+        printf(" Electricity Cost: Rs %.2f\n", electricitycost);
+    }
+}
+   
+    
+
