@@ -1,0 +1,56 @@
+#include<stdio.h>
+int main(){
+    int mealcategory, customertype;
+     float servicecharge, discount, bill, finalamount;
+    printf(" enter meal category:(1=fastfood, 2=desifood, 3=chinese)");
+    scanf("%d", &mealcategory);
+    printf("enter the customer type:(1=student, 2=regular)");
+    scanf("%d", &customertype);
+    printf("enter bill amount");
+    scanf("%f", &bill);
+    switch(mealcategory)
+    {
+        case 1:
+        servicecharge =bill*0.05;
+        break;
+        case 2:
+        servicecharge =bill*0.08;
+        break;
+        case 3:
+        servicecharge =bill*0.10;
+        break;
+        default:
+        printf("invalid selection");
+    }
+    if(customertype !=1 && customertype !=2)
+    {
+        printf("invalid selection");
+    }
+    if(bill >=1000)
+    {
+        if(customertype==1){
+            discount =bill*0.15;
+        }
+        else
+        {
+            discount =bill*0.10;
+         }
+    }
+    else if(bill<=1000){
+        if (customertype==1){
+            discount =bill*0.05;
+        }
+        else 
+        {
+            discount =0;
+        }
+     }
+     finalamount =bill+servicecharge-discount;
+     printf("the sevice charge is %.2f",servicecharge);
+      printf("the discount is %.2f",discount);
+      printf("the final payable amount is %.2f",finalamount);
+    }
+     
+   
+   
+   
