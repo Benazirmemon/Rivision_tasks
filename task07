@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main(){
+    float battingaverage;
+    int matchesplayed, fitness;
+    printf("enter the battingaverage:");
+    scanf("%f", &battingaverage);
+    printf("enter the matches played: ");
+    scanf("%d", &matchesplayed);
+    printf("enter the fitness failurestatus:(1 =failed, 0=passed)");
+    scanf("%d", &fitness);
+    if(battingaverage >=25.0 && matchesplayed >=10)
+    {
+        printf("selected");
+    }
+    else if(battingaverage >=25.0 && battingaverage <=34.9 && matchesplayed >=20)
+    {
+        printf("selected by Experience Quota");
+    }
+    else 
+    {
+        printf("not selected");
+    }
+    if (fitness==1)
+    {
+        if(battingaverage >=25.0 && matchesplayed >=10){
+        printf("rejected fitness");
+        }
+         else if(battingaverage >=25.0 && battingaverage <=34.9 && matchesplayed >=20)
+    {
+        printf("rejected fitness");
+    }
+    else
+    {
+        printf("rejected fitness");
+      }
+    }
+}
+
+
+        
+    
+   
+
+
+    
