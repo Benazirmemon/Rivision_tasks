@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int overduedays, booktype, membership;
+    float fine = 0.0;
+
+    printf("enter the number of overdue days: ");
+    scanf("%d", &overduedays);
+
+    printf("enter the booktype (1=regular, 2=reference, 3=rare): ");
+    scanf("%d", &booktype);
+
+    printf("enter the membership (1=yes, 0=no): ");
+    scanf("%d", &membership);
+
+    if (booktype == 1) {
+        if (overduedays <= 7) {
+            fine = overduedays * 5;
+        } else {
+            fine = (7 * 5) + (overduedays - 7) * 10;
+        }
+    } 
+    else if (booktype == 2) {
+        fine = overduedays * 15;
+    } 
+    else if (booktype == 3) {
+        fine = overduedays * 30;
+        if (overduedays > 10) {
+            printf("Banned from Borrowing\n");
+        }
+    }
+
+    if (membership == 1 && booktype != 3) {
+        fine = fine * 0.80;
+    }
+
+    printf("the fine is %.2f\n", fine);
+
+    return 0;
+}
